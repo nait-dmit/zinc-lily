@@ -9,7 +9,7 @@ gem 'pg'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'lock'
-
+gem "github_api"
 
 # Gems used only for assets and not required
 # in production environments by default.

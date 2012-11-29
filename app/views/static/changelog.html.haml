@@ -1,0 +1,13 @@
+%h2 Changelog
+
+%ul
+- @github.each do |data|
+
+  %li
+    = data.commit.author.date.to_date
+    \|
+    = data.author.login
+    \|
+    = data.commit.message
+
+
