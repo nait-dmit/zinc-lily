@@ -1,0 +1,5 @@
+= form_tag unlock_path, id: "login-form" do
+  %h2 Unlock
+  = label_tag(:password, 'Enter Password')
+  = password_field_tag :password
+  = submit_tag "Submit"

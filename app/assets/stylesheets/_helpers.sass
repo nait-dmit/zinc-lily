@@ -1,0 +1,41 @@
+=prefix($property, $value)
+  -webkit-#{ $property }: #{ $value }
+  -moz-#{ $property }: #{ $value }
+  -o-#{ $property }: #{ $value }
+  -ie-#{ $property }: #{ $value }
+  #{ $property }: #{ $value }
+
+=border-radius($radii)
+  +prefix(border-radius, $radii)
+  +prefix(background-clip, padding-box)
+
+=box-shadow($style, $ie: false)
+  -webkit-box-shadow: $style
+  -moz-box-shadow: $style
+  -ms-box-shadow: $style
+  -o-box-shadow: $style
+  box-shadow: $style
+  @if $ie
+    behavior: url(/javascripts/PIE.htc)
+
+=linear-gradient($from, $to)
+  background-color: mix($from, $to)
+  background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to))
+  background-image: -webkit-linear-gradient(top, $from, $to)
+  background-image: -moz-linear-gradient(top, $from, $to)
+  background-image: -ms-linear-gradient(top, $from, $to)
+  background-image: -o-linear-gradient(top, $from, $to)
+  background-image: linear-gradient(top, $from, $to)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="#{ $from }", EndColorStr="#{ $to }")
+
+=responds-to($device)
+  @media #{ $device }
+    @content
+
+=font-face($family, $file, $weight: normal, $style: normal)
+  @font-face
+    font-family: $family
+    src: url("#{ $file }.eot")
+    src: url("#{ $file }.eot?#iefix") format("embedded-opentype"), url("#{ $file }.woff") format("woff"), url("#{ $file }.ttf") format("truetype"), url("#{ $file }.svg#svg#{ $family }") format("svg")
+    font-weight: $weight
+    font-style: $style

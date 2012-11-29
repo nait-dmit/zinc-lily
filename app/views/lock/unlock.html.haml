@@ -1,0 +1,12 @@
+#notice
+  %h2 Success!
+  %p
+    Redirecting to
+    = link_to proposals_path.to_s, proposals_path
+    \...
+
+:javascript
+  setTimeout(function(){
+    window.location = "/proposals"
+  }, 2000)
+

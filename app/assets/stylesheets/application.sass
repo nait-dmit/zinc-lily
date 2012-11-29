@@ -1,0 +1,287 @@
+@import helpers, normalize
+@import url(http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,900italic,400,900,700)
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700)
+
+$cloudless-day: #69D2E7
+$unreal-food-pills: #FA6900
+$header-color: $cloudless-day
+$highlight-color: $unreal-food-pills
+$dark-neutral: #333
+$error-color: #D54248
+
+::selection
+  background: $highlight-color
+::-moz-selection
+  background: $highlight-color
+::-webkit-selection
+  background: $highlight-color
+
+  // background: $highlight-color
+
+*
+  +prefix('box-sizing', border-box)
+
+body
+  max-width: 840px
+  margin: 0 auto
+  padding: 20px
+  padding-bottom: 60px
+  font: 16px/1.8 'Open Sans', sans-serif
+  color: $dark-neutral
+  background: #fff
+
+h1, h2, h3, h4, h5, h6, legend, label
+  font:
+    family: 'Alegreya', sans-serif
+  line-height: 1.1
+
+
+header
+  margin: 60px 0px
+
+  hgroup
+    h1
+      font-size: 3em
+      font-weight: bolder
+
+    h1, h2
+      margin: 0
+      line-height: 1
+
+
+h2
+  margin-top: 1.4em
+  margin-bottom: 0.25em
+  font-family: 'Open Sans'
+  letter-spacing: -0.05em
+
+p
+  margin-top: 0
+  color: #555
+
+ul
+  margin-top: 0px
+  padding-left: 0
+  list-style: none
+
+  li
+    margin-left: 0
+    margin-bottom: 4px
+    padding-left: 0
+    // border-left: 4px solid $cloudless-day
+
+a
+  color: $highlight-color
+  text-decoration: none
+
+a.button
+  display: block
+  max-width: 400px
+  margin: 40px auto
+  padding: 20px
+  font:
+    family: 'Alegreya'
+    size: 1.5em
+    weight: 700
+  text:
+    align: center
+    decoration: none
+  color: #fff
+  background: $highlight-color
+  border:
+    left: 4px solid $dark-neutral
+    right: 4px solid $dark-neutral
+
+  &#new_proposal
+    margin-top: 40px
+
+
+form
+  padding-bottom: 60px
+
+label, input, textarea
+  display: inline-block
+
+fieldset
+  margin: 0
+  margin-bottom: 20px
+  padding: 0
+  border: none
+
+legend
+  font-weight: bold
+
+form > fieldset > legend
+  width: 100%
+  padding: 10px
+  font-size: 2em
+  color: #fff
+  background: $header-color
+
+fieldset fieldset legend
+  display: block
+  width: 204px
+  padding: 10px
+  color: #fff
+  background: $dark-neutral
+
+fieldset .input
+  margin-bottom: 20px
+
+fieldset.grouped .input
+  margin-bottom: 0px
+
+fieldset.actions
+  margin-left: 0px
+
+  label.checkbox
+    width: 100%
+    padding: 0
+    text-align: left
+
+    input
+      display: inline
+
+input, textarea
+  width: 600px
+  max-width: 600px
+  padding: 10px
+  margin: 0
+  font: 16px/1.4 'Open Sans', sans-serif
+  border: none
+  border-left: 4px solid $dark-neutral
+
+  &:focus
+    border: none
+    border-left: 4px solid $highlight-color
+    outline: none
+
+label
+  width: 200px
+  padding-right: 20px
+  text-align: right
+
+abbr[title='required']
+  border-bottom: none
+  outline: none
+  color: $error-color
+
+input[type='submit']
+  width: 204px
+  font:
+    family: 'Alegreya'
+    size: 1.5em
+  color: #fff
+  background: $highlight-color
+  border-right: 4px solid $dark-neutral
+  border-left: none
+
+#error_explanation
+  margin-bottom: 20px
+  padding: 10px 20px
+  color: #fff
+  background: $error-color
+
+  h2
+    margin: 0
+    margin-bottom: 1em
+    font:
+      size: 1em
+      weight: 700
+
+  ul
+    margin: 0
+    padding-left: 20px
+
+    li
+      border: none
+
+      &:before
+        width: 20px
+        content: "\002192\002003 "
+
+.field_with_errors
+  label
+    color: $error-color
+
+  input
+    border-left-color: $error-color
+
+span.error
+  display: none
+
+
+#notice
+  padding: 20px
+  background: $highlight-color
+  color: #fff
+
+  p, h2, a
+    color: #fff
+
+  a
+    font-weight: 700
+
+  h2
+    margin-top: 0
+
+.signature
+  margin-top: 3em
+
+table
+  width: 100%
+
+  th
+    text-align: left
+    color: #fff
+    background: $dark-neutral
+
+  tr:nth-child(odd)
+    background: #f7f7f7
+
+  tr:hover
+    background: fade-out($cloudless-day, 0.8)
+
+  td.actions
+    text-align: right
+
+    a
+      padding: 4px
+      font-size: 0.8em
+      color: $highlight-color
+      text-decoration: none
+
+      &.danger
+        color: $error-color
+
+a.danger
+  color: $error-color
+
+.proposal-name
+  font-weight: 700
+
+#login-form
+  padding: 20px
+  // text-align: center
+  background: #eee
+
+  h2
+    margin-top: 0
+    margin-bottom: 1em
+    border-bottom: 1px solid #ccc
+
+  label
+    width: 160px
+  input
+    width: 400px
+    padding: 10px
+    font:
+      size: 1.5em
+      family: 'Alegreya'
+
+  input[type='submit']
+    display: inline-block
+    width: 100px
+    margin-left: -0.25em
+    border: none
+    // border-left: 4px solid $dark-neutral

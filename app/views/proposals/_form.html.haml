@@ -1,0 +1,79 @@
+= simple_form_for @proposal do |f|
+  - if @proposal.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@proposal.errors.count, "error")} prohibited this proposal from being saved:"
+      %ul
+        - @proposal.errors.full_messages.each do |msg|
+          %li= msg
+
+  -# Business Information
+  %fieldset
+    %legend Business Information
+
+    %fieldset
+      = f.input :company_name, label: "Company Name"
+
+    %fieldset.grouped
+      %legend Primary Contact
+      = f.input :primary_contact_name, label: "Name"
+      = f.input :primary_contact_title, label: "Title"
+      = f.input :primary_contact_phone, label: "Phone"
+      = f.input :primary_contact_email, label: "Email"
+
+    %fieldset.grouped
+      %legend Secondary Contact
+      = f.input :secondary_contact_name, label: "Name"
+      = f.input :secondary_contact_title, label: "Title"
+      = f.input :secondary_contact_phone, label: "Phone"
+      = f.input :secondary_contact_email, label: "Email"
+
+    = f.input :nature_of_business, label: "Describe the nature of your business"
+
+  -# Project Information
+  %fieldset
+    %legend Project Discovery
+
+    %fieldset
+      = f.input :project_name, label: "Project Name"
+
+    %fieldset
+      %legend Overview
+      = f.input :project_purpose, label: "Describe the purpose of the project"
+      = f.input :project_goals, label: "Have specific goals or milestones been identified for the project. If so, what are they?"
+      = f.input :project_constraints, label: "Describe project constraints, deadlines, and technical requirements"
+      = f.input :project_audience, label: "Describe the audience for this project; who are you designing or developing for?"
+      = f.input :project_content_management, label: "Who will be responsible for updating the content of the project? Will a content management system (CMS) be required?"
+
+    -# Student Requirements
+    %fieldset
+      %legend Student Requirements
+      = f.input :student_skills, label: "Describe the skills required by students to complete this project"
+
+    -# Client Responsibilities
+    %fieldset
+      %legend Client Responsibilities
+      = f.input :client_availability, label: "How often will you, or the contacts on this project, be available to students? What are the acceptable and preferred methods for contact to be made?"
+      = f.input :client_resources, label: "What materials will you need to provide to students in order to complete the project?"
+
+    -# Capstone Timeline
+    %fieldset
+      %legend Capstone Timeline
+      %p The Capstone course runs between January and April. Students have a limited amount of time to spend on any given project so it is imperative that the student is able to spend this time as productive as possible. The next few questions are used to determine if the timeline of the project and the availability of the project materials matches the timeline of the Capstone course.
+      = f.input :timeline_first_week, label: "Will the project materials be available during the first week of the capstone course?"
+      = f.input :timeline_delays, label: "Describe any conditions you can think of that might delay the availability of the project materials"
+      = f.input :timeline_client_availability, label: "Describe any conditions where the client contacts for this project will be unavailable to be contacted through the duration of the Capstone course"
+
+    -# Project Deployment
+    %fieldset
+      %legend Project Deployment
+      = f.input :deployment_budget, label: "Is there a budget for hosting?"
+      = f.input :deployment_webhost_details, label: "If known, please provide the name of the web host and the details of the hosting plan that will be used"
+      = f.input :deployment_domain_name, label: "Has a domain name been secured for this project? If so, who will be responsible for administering the domain name?"
+
+    %fieldset.actions
+
+      =# check_box_tag :download_pdf
+      =# label_tag :download_pdf, 'Download a .pdf copy for your records', class: 'checkbox'
+
+      = f.submit 'Submit'
+      = link_to "Cancel", root_path

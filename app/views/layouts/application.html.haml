@@ -1,0 +1,31 @@
+!!!5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    %meta(name="description" content="")
+    %meta(name="viewport" content="width=device-width,initial-scale=1")
+
+    %title Capstone Project Proposal | Web Desing &amp; Development | DMIT | NAIT
+
+    = stylesheet_link_tag :application
+    = javascript_include_tag :application
+
+
+  %body
+    %nav
+      - if session[:lock_opened] == true
+        = link_to "Home", root_path
+        |
+        = link_to "Proposals", proposals_path
+
+
+    %header
+      %hgroup
+        %h2 DMIT | Web Design &amp; Development
+        %h1 Capstone Project Proposal
+
+    -if notice
+      #notice= raw(notice)
+    #content= yield
+    %footer

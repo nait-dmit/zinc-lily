@@ -1,0 +1,20 @@
+%h1 Listing Proposals
+
+%table
+  %tr
+    %th Title
+    %th Company
+    %th Contact Email
+    %th
+
+  - @proposals.each do |proposal|
+    %tr
+      %td.proposal-name= proposal.project_name
+      %td= proposal.company_name
+      %td= proposal.primary_contact_email
+      %td.actions
+        = link_to 'View', proposal
+        |
+        = link_to 'Edit', edit_proposal_path(proposal)
+        |
+        = link_to 'Delete', proposal, method: :delete, data: { confirm: 'Are you sure?' }, class: 'danger'
