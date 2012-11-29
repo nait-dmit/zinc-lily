@@ -125,6 +125,21 @@ fieldset fieldset legend
   color: #fff
   background: $dark-neutral
 
+.fieldset-header
+  overflow: hidden
+
+  legend, .fieldset-explanation
+    float: left
+
+  legend
+    height: 100px
+
+  .fieldset-explanation
+    max-width: 580px
+    padding-left: 10px
+    line-height: 1.4
+    font-size: 0.8em
+
 fieldset .input
   margin-bottom: 20px
 
@@ -160,6 +175,9 @@ label
   width: 200px
   padding-right: 20px
   text-align: right
+
+  &.first-in-subset
+    margin-top: 1em
 
 abbr[title='required']
   border-bottom: none
