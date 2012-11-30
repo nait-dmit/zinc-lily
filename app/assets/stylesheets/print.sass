@@ -1,0 +1,103 @@
+@import helpers, normalize
+@import url(http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,900italic,400,900,700)
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700)
+
+$cloudless-day: #69D2E7
+$unreal-food-pills: #FA6900
+$header-color: $cloudless-day
+$highlight-color: $unreal-food-pills
+$dark-neutral: #333
+$medium-neutral: $unreal-food-pills
+$error-color: #D54248
+
+*
+  +prefix('box-sizing', border-box)
+
+body
+  max-width: 840px
+  margin: 0 auto
+  padding: 20px
+  font: 13px/1.4 'Open Sans', sans-serif
+  color: $dark-neutral
+  background: #fff
+
+h1, h2, h3, h4, h5, h6, legend, label
+  font:
+    family: 'Alegreya', sans-serif
+  line-height: 1.1
+
+
+header
+  margin: 20px 0px
+
+  hgroup
+    h1, h2
+      margin: 0
+      line-height: 1
+
+    h1
+      font-size: 2.5em
+      font-weight: 900
+
+    h2
+      font-size: 1.5em
+
+
+
+
+.screen-only
+  display: none
+
+.field
+  overflow: hidden
+  margin-top: 1em
+
+
+.field_group .field
+  margin-top: 0
+
+
+label, .data
+  display: block
+  float: left
+
+label
+  width: 30%
+  padding: 0.4em 1em
+  text-align: right
+
+.data
+  width: 70%
+  min-height: 2em
+  padding: 0.25em 0 0 0.5em
+  border-left: 4px solid $medium-neutral
+
+  p
+    margin-top: 0.2em
+
+.field.long .data
+  min-height: 120px
+
+.field.em
+  font:
+    size: 18px
+    weight: 700
+
+#proposal
+  h2, h3
+    color: $medium-neutral
+    // background: $cloudless-day
+    padding: 0.5em 0.5em 0em 0.5em
+    margin-bottom: 0
+    border-bottom: 4px solid $medium-neutral
+
+    & + .field
+      margin-top: 0
+
+  h3
+    position: relative
+    left: 4px
+    width: 25%
+    margin-left: 5%
+    padding-bottom: 0.15em
+    // background: $dark-neutral

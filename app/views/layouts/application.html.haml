@@ -9,11 +9,11 @@
     %title Capstone Project Proposal | Web Design &amp; Development | DMIT | NAIT
 
     = stylesheet_link_tag :application
+    = stylesheet_link_tag :print, { media: 'print' }
     = javascript_include_tag :application
 
-
   %body
-    %nav
+    %nav.screen-only
       - if session[:lock_opened] == true
         = link_to "Home", root_path
         |

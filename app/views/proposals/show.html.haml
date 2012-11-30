@@ -1,6 +1,116 @@
+#proposal.printable
+  %h2 Business Information
+
+  .field.em
+    %label Company Name
+    .data= @proposal.company_name
 
 
+  %h3 Primary Contact
 
-= link_to 'Edit', edit_proposal_path(@proposal)
-\|
-= link_to 'Back', proposals_path
+  .field_group
+    .field
+      %label Name
+      .data= @proposal.primary_contact_name
+
+    .field
+      %label Title
+      .data= @proposal.primary_contact_title
+
+    .field
+      %label Phone
+      .data= @proposal.primary_contact_phone
+
+    .field
+      %label Email
+      .data= link_to @proposal.primary_contact_email, "mailto: #{ @proposal.primary_contact_email }"
+
+
+  %h3 Secondary Contact
+
+  .field_group
+    .field
+      %label Name
+      .data= @proposal.secondary_contact_name
+
+    .field
+      %label Title
+      .data= @proposal.secondary_contact_title
+
+    .field
+      %label Phone
+      .data= @proposal.secondary_contact_phone
+
+    .field
+      %label Email
+      .data= link_to @proposal.secondary_contact_email, "mailto:#{ @proposal.secondary_contact_email }"
+
+  .field
+    %label Describe the nature of your business
+    .data= simple_format @proposal.nature_of_business
+
+
+  %h2 Project Discovery
+
+  .field.em
+    %label Project Name
+    .data= @proposal.project_name
+
+  %h3 Overview
+  .field
+    %label Describe the purpose of the project
+    .data= simple_format @proposal.project_purpose
+
+  .field.long
+    %label Have specific goals or milestones been identified for the project. If so, what are they?
+    .data= simple_format @proposal.project_goals
+
+  .field.long
+    %label Describe project constraints, deadlines, and technical requirements
+    .data= simple_format @proposal.project_constraints
+  .field.long
+    %label Describe the audience for this project; who are you designing or developing for?
+    .data= simple_format @proposal.project_audience
+  .field.long
+    %label Who will be responsible for updating the content of the project? Will a content management system (CMS) be required?
+    .data= simple_format @proposal.project_content_management
+
+  %h3 Student Requirements
+  .field.long
+    %label Describe the skills required by students to complete this project
+    .data= simple_format @proposal.student_skills
+
+  %h3 Client Responsibilities
+  .field.long
+    %label How often will you, or the contacts on this project, be available to students? What are the acceptable and preferred methods for contact to be made?
+    .data= simple_format @proposal.client_availability
+  .field.long
+    %label What materials will you need to provide to students in order to complete the project?
+    .data= simple_format @proposal.client_resources
+
+  %h3 Capstone Timeline
+  .field.long
+    %label Will the project materials be available during the first week of the capstone course?
+    .data= simple_format @proposal.timeline_first_week
+  .field.long
+    %label Describe any conditions you can think of that might delay the availability of the project materials
+    .data= simple_format @proposal.timeline_delays
+  .field.long
+    %label Describe any conditions where the client contacts for this project will be unavailable to be contacted through the duration of the Capstone course
+    .data= simple_format @proposal.timeline_client_availability
+
+  %h3 Project Deployment
+  .field
+    %label Is there a budget for hosting?
+    .data= simple_format @proposal.deployment_budget
+  .field.long
+    %label If known, please provide the name of the web host and the details of the hosting plan that will be used
+    .data= simple_format @proposal.deployment_webhost_details
+  .field.long
+    %label Has a domain name been secured for this project? If so, who will be responsible for administering the domain name?
+    .data= simple_format @proposal.deployment_domain_name
+
+.screen-only
+  = link_to 'Edit', edit_proposal_path(@proposal)
+  \|
+  = link_to 'Back', proposals_path
