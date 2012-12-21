@@ -1,0 +1,45 @@
+!!!5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    %meta(name="description" content="")
+    %meta(name="viewport" content="width=device-width,initial-scale=1")
+
+    %title Capstone Project Proposal | Web Design &amp; Development | DMIT | NAIT
+
+    = stylesheet_link_tag :application, { media: nil }
+    = javascript_include_tag :application
+
+  %body
+    %nav.screen-only
+      - if session[:lock_opened] == true
+        = link_to "Home", root_path
+        |
+        = link_to "Proposals", proposals_path
+        |
+        = link_to "Changelog", changelog_path
+
+
+    %header
+      %hgroup
+        %h2 DMIT | Web Design &amp; Development
+        %h1 Capstone Industry Series
+
+    -if notice
+      #notice= raw(notice)
+    #content= yield
+    %footer
+
+  :javascript
+    var _gauges = _gauges || [];
+    (function() {
+      var t   = document.createElement('script');
+      t.type  = 'text/javascript';
+      t.async = true;
+      t.id    = 'gauges-tracker';
+      t.setAttribute('data-site-id', '50b7839df5a1f527ba000003');
+      t.src = '//secure.gaug.es/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+    })();

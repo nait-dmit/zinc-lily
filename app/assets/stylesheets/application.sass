@@ -7,12 +7,16 @@ $cloudless-day: #69D2E7
 $unreal-food-pills: #FA6900
 $header-color: $cloudless-day
 $highlight-color: $unreal-food-pills
+$light-neutral: #eee
 $dark-neutral: #333
 $medium-neutral: $unreal-food-pills
 $error-color: #D54248
 
 *
   +prefix('box-sizing', border-box)
+
+label
+  text-transform: capitalize
 
 @media screen
   ::selection
@@ -306,6 +310,7 @@ $error-color: #D54248
       // border-left: 4px solid $dark-neutral
 
   @import proposal_show
+  @import talks
 
 @media print
   @import print

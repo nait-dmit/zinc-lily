@@ -1,5 +1,8 @@
 ZincLily::Application.routes.draw do
 
+  get "industry-series" => "talks#index"
+
+  resources :talks
   resources :proposals
 
   get "changelog" => "static#changelog", as: "changelog"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121124172106) do
+ActiveRecord::Schema.define(:version => 20121221014955) do
 
   create_table "proposals", :force => true do |t|
     t.string   "company_name"
@@ -41,6 +41,22 @@ ActiveRecord::Schema.define(:version => 20121124172106) do
     t.text     "deployment_domain_name"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+  end
+
+  create_table "talks", :force => true do |t|
+    t.string   "title"
+    t.string   "speaker_name"
+    t.string   "speaker_email"
+    t.text     "notes"
+    t.string   "slides_url"
+    t.string   "speaker_twitter"
+    t.string   "speaker_facebook"
+    t.string   "speaker_linkedin"
+    t.string   "speaker_googleplus"
+    t.date     "scheduled_for"
+    t.boolean  "confirmed"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
 end

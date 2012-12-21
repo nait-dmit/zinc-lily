@@ -1,0 +1,23 @@
+%h1 Schedule of Talks
+
+
+
+- @talks.group_by(&:scheduled_for).each do |day, talks|
+  .talk-day
+    .date
+      = day.strftime("%b %e, %Y")
+      starting at 2:30pm
+
+    - talks.each do |talk|
+      .talk{ class: vacant?(talk) }
+        %hgroup
+          %h1= talk.title
+          %h2= talk.speaker_name
+
+        %td= talk.notes
+        %td= link_to 'Edit', edit_talk_path(talk)
+        %td= link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+
+= link_to 'New Talk', new_talk_path

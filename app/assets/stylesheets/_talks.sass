@@ -1,0 +1,31 @@
+.talk-day
+  margin-bottom: 3em
+
+  .date
+    margin-bottom: 1em
+    padding: 0.5em 2em
+    color: #fff
+    background: $dark-neutral
+
+.talk
+  margin-bottom: 1em
+  margin-top: 1em
+  padding: 0.5em 2em
+  background: $header-color
+  border-bottom: 1px solid darken($header-color, 10%)
+
+
+
+  hgroup
+    margin-bottom: 1em
+
+    h1, h2, h3, h4, h5
+      margin: 0px
+
+  &.vacant
+    background: $light-neutral
+    border-bottom: 1px solid darken($light-neutral, 10%)
+
+    hgroup
+      font-style: italic
+      color: lighten($dark-neutral, 50%)

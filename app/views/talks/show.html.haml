@@ -1,0 +1,39 @@
+%p#notice= notice
+%p
+  %b Title
+  = @talk.title
+
+%p
+  %b Speaker name:
+  = @talk.speaker_name
+%p
+  %b Speaker email:
+  = @talk.speaker_email
+%p
+  %b Speaker notes:
+  = @talk.notes
+%p
+  %b Speaker slides:
+  = @talk.slides_url
+%p
+  %b Speaker twitter:
+  = @talk.speaker_twitter
+%p
+  %b Speaker facebook:
+  = @talk.speaker_facebook
+%p
+  %b Speaker linkedin:
+  = @talk.speaker_linkedin
+%p
+  %b Speaker googleplus:
+  = @talk.speaker_googleplus
+%p
+  %b Scheduled for:
+  = @talk.scheduled_for
+%p
+  %b Confirmed:
+  = @talk.confirmed
+
+= link_to 'Edit', edit_talk_path(@talk)
+\|
+= link_to 'Back', talks_path

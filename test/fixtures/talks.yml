@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  speaker_name: MyString
+  speaker_email: MyString
+  speaker_notes: MyText
+  speaker_slides: MyString
+  speaker_twitter: MyString
+  speaker_facebook: MyString
+  speaker_linkedin: MyString
+  speaker_googleplus: MyString
+  scheduled_for: 2012-12-20 18:49:55
+  confirmed: false
+
+two:
+  speaker_name: MyString
+  speaker_email: MyString
+  speaker_notes: MyText
+  speaker_slides: MyString
+  speaker_twitter: MyString
+  speaker_facebook: MyString
+  speaker_linkedin: MyString
+  speaker_googleplus: MyString
+  scheduled_for: 2012-12-20 18:49:55
+  confirmed: false
