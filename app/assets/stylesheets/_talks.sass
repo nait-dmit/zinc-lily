@@ -8,10 +8,12 @@
     background: $dark-neutral
 
 .talk
+  overflow: hidden
+  position: relative
   margin-bottom: 1em
   margin-top: 1em
-  padding: 0.5em 2em
-  background: $header-color
+  padding: 1em 2em
+  background: lighten($header-color, 20%)
   border-bottom: 1px solid darken($header-color, 10%)
 
 
@@ -22,6 +24,9 @@
     h1, h2, h3, h4, h5
       margin: 0px
 
+    h2
+      font-size: 1em
+
   &.vacant
     background: $light-neutral
     border-bottom: 1px solid darken($light-neutral, 10%)
@@ -29,3 +34,33 @@
     hgroup
       font-style: italic
       color: lighten($dark-neutral, 50%)
+
+  .speaker-avatar
+    overflow: hidden
+    float: left
+    width: 160px
+    height: 160px
+    margin-right: 20px
+    background:
+      position: center center
+      color: #fff
+    +prefix(background-size, 110%)
+    +prefix(background-clip, padding-box)
+    border: 5px solid white
+    border-radius: 100px
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3)
+
+  .details
+    float: left
+    width: 556px
+
+  .actions .action
+    position: absolute
+    top: 20px
+    right: 0px
+
+    &.edit
+      right: 40px
+
+    &.destroy
+      right: 20px

@@ -9,15 +9,25 @@
       starting at 2:30pm
 
     - talks.each do |talk|
-      .talk{ class: vacant?(talk) }
-        %hgroup
-          %h1= talk.title
-          %h2= talk.speaker_name
+      .talk{ class: vacant_class?(talk) }
+        .speaker-avatar{ style: "background-image: url(#{ gravatar_img_url(talk.speaker_gravatar_hash) })"}
 
-        %td= talk.notes
-        %td= link_to 'Edit', edit_talk_path(talk)
-        %td= link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' }
+        .details
+          %hgroup.title
+            %h1= talk.title
+            %h2= talk.speaker_name_and_title
+
+          .notes
+            - if talk.vacant?
+              Are you an industry professional with some advice to newcomers, an opinion about programming best practices, interesting stories based on your experience, or any other ideas that might be relevant to web design and development students? Find out how to contribute, get in touch today!
+            - else
+              = excerpt(talk)
+
+        - if admin?
+          .actions
+            = link_to 'Edit', edit_talk_path(talk), class: 'edit action'
+            = link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy action'
 
 
 
-= link_to 'New Talk', new_talk_path
+= link_to 'New Talk', new_talk_path if admin?

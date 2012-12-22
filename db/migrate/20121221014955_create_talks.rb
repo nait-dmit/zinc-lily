@@ -4,6 +4,8 @@ class CreateTalks < ActiveRecord::Migration
       t.string :title
       t.string :speaker_name
       t.string :speaker_email
+      t.string :speaker_company
+      t.string :speaker_job_title
       t.text :notes
       t.string :slides_url
       t.string :speaker_twitter

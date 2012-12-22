@@ -1,6 +1,6 @@
 ZincLily::Application.routes.draw do
 
-  get "industry-series" => "talks#index"
+  get "industry-series" => "talks#index", as: "public_talks"
 
   resources :talks
   resources :proposals

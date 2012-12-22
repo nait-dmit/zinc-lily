@@ -1,0 +1,19 @@
+@function row($row, $gs: 26px, $offset: 92px)
+  @return -( (($row - 1) * $gs) + $offset)
+
+@function column($column, $gs: 26px, $offset: 10px)
+  @return -( (( $column - 1) * $gs) + $offset)
+
+a.action, button.action
+  display: inline-block
+  height: 16px
+  width: 16px
+  text-indent: -9999px
+  background:
+    image: url("http://cdn.sitepress.cc.s3.amazonaws.com/libs/images/ui/icon-sets/batch/sprite-med-flat-black.png")
+
+  &.edit
+    background-position: column(15) row(19)
+
+  &.destroy
+    background-position: column(15) row(20)
