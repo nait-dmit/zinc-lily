@@ -68,6 +68,7 @@ GEM
     json (1.7.5)
     jwt (0.1.5)
       multi_json (>= 1.0)
+    leaflet-rails (0.4.5)
     lock (0.1.0)
       bcrypt-ruby
     mail (2.4.4)
@@ -145,6 +146,7 @@ DEPENDENCIES
   github_api
   haml-rails
   jquery-rails
+  leaflet-rails
   lock
   pg
   rails (= 3.2.8)

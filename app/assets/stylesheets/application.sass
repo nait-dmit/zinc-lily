@@ -4,11 +4,12 @@
 @import helpers, normalize
 
 $cloudless-day: #69D2E7
+$skyline: #26C5CE
 $unreal-food-pills: #FA6900
-$header-color: $cloudless-day
+$header-color: $skyline
 $highlight-color: $unreal-food-pills
 $light-neutral: #eee
-$dark-neutral: #333
+$dark-neutral: #121212
 $medium-neutral: $unreal-food-pills
 $error-color: #D54248
 
@@ -27,13 +28,15 @@ label
     background: $highlight-color
 
   body
-    max-width: 840px
-    margin: 0 auto
     padding: 20px
     padding-bottom: 60px
     font: 16px/1.8 'Open Sans', sans-serif
     color: $dark-neutral
     background: #fff
+
+  .container
+    max-width: 840px
+    margin: 0 auto
 
   h1, h2, h3, h4, h5, h6, legend, label
     font:
@@ -41,7 +44,7 @@ label
     line-height: 1.1
 
 
-  header
+  header, .talk-day
     margin: 60px 0px
 
     hgroup
@@ -49,9 +52,22 @@ label
         font-size: 3em
         font-weight: bolder
 
-      h1, h2
+      h1, h2, h3
         margin: 0
         line-height: 1
+
+  nav
+    overflow: hidden
+    padding: 10px
+    color: #fff
+    background: $dark-neutral
+
+    a
+      padding: 1em 0
+      color: #fff
+
+  section h1
+    margin-bottom: 0
 
 
   h2

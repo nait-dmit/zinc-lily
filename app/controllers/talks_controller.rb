@@ -2,7 +2,12 @@ class TalksController < ApplicationController
   # GET /talks
   # GET /talks.json
   def index
-    @talks = Talk.where({ confirmed: true })
+    @talks = Talk.where({ confirmed: true }).order('scheduled_for asc')
+    @talks_per_day = @talks.group_by { |t| t.scheduled_for.beginning_of_day }
+
+    # raise @talks_per_day.inspect
+
+
 
     respond_to do |format|
       format.html # index.html.erb

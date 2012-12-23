@@ -1,11 +1,52 @@
-.talk-day
+body.talks
+  padding: 0
+
+
+  > header
+    margin: 0
+    padding: 8em 0 3em 0
+    color: #fff
+    text-shadow: 1px 1px 5px #000
+    background:
+      image: url(http://christiannaths.com/code/admin-interface/dots.png), url(edmonton-skyline-02.jpg)
+      position: center center, center center
+      repeat: fixed, no-repeat
+      size: auto, cover
+    border-bottom: 4px solid $dark-neutral
+
+    hgroup
+      h1
+        font-weight: bold
+      h2
+        font-weight: 100
+
+  #content
+    background: #fff
+
+
+article header
+  margin: 0
+  margin-bottom: 1em
+
+  h1
+    margin: 0
+
+
+#schedule .day
   margin-bottom: 3em
 
-  .date
+
+  hgroup
     margin-bottom: 1em
     padding: 0.5em 2em
     color: #fff
     background: $dark-neutral
+
+    h1
+      margin: 0
+
+
+
 
 .talk
   overflow: hidden
@@ -16,30 +57,17 @@
   background: lighten($header-color, 20%)
   border-bottom: 1px solid darken($header-color, 10%)
 
-
-
-  hgroup
-    margin-bottom: 1em
-
-    h1, h2, h3, h4, h5
-      margin: 0px
-
-    h2
-      font-size: 1em
-
   &.vacant
+    font-style: italic
+    color: lighten($dark-neutral, 50%)
     background: $light-neutral
     border-bottom: 1px solid darken($light-neutral, 10%)
-
-    hgroup
-      font-style: italic
-      color: lighten($dark-neutral, 50%)
 
   .speaker-avatar
     overflow: hidden
     float: left
-    width: 160px
-    height: 160px
+    width: 120px
+    height: 120px
     margin-right: 20px
     background:
       position: center center
@@ -64,3 +92,39 @@
 
     &.destroy
       right: 20px
+
+#location .address
+  overflow: hidden
+  padding: 0.5em 2em
+  color: #fff
+  background: $dark-neutral
+
+  h2, p
+    margin: 0
+    color: #fff
+
+  h2
+    margin-bottom: 0.25em
+
+  p
+    font-size: 0.8em
+    line-height: 1.2
+
+#map
+  height: 420px
+  border:
+    top: 5px solid $dark-neutral
+    bottom: 5px solid $dark-neutral
+
+  .leaflet-control-attribution
+    color: #fff
+    background: $dark-neutral
+
+    a
+      color: $header-color
+
+  .leaflet-popup-content h1
+    margin: 0
+
+  .leaflet-popup-content-wrapper
+    +prefix(border-radius, 0)

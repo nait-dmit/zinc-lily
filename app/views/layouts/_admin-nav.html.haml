@@ -1,0 +1,9 @@
+%nav.screen-only
+  - if session[:lock_opened] == true
+
+    .container
+      = link_to "Home", root_path
+      |
+      = link_to "Proposals", proposals_path
+      |
+      = link_to "Changelog", changelog_path

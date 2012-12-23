@@ -1,33 +1,55 @@
-%h1 Schedule of Talks
+%section#about
+  %h1 About
+  %p Every year the Digital Media & IT program at NAIT will graduate between 30 and 50 web design & development students. As part of their education, each student will participate in a course called Capstone Project, in which they are given the opportunity to work on projects to strengthen their portfolio and otherwise gain experience working in scenarios which are closer to those found in industry.
+
+%section#schedule
+
+  %h1 Schedule
+
+  - @talks_per_day.each_with_index do |day, index|
+    %section.day
+      %hgroup
+        %h1= "Day #{ index + 1 }"
+        %span.date
+          = day[0].strftime("%b %e, %Y")
+          starting at 2:30pm
+
+      - day[1].each do |talk|
+        %article.talk{ class: vacant_class?(talk) }
+          .speaker-avatar{ style: "background-image: url(#{ gravatar_img_url(talk.speaker_gravatar_hash) })"}
+          %header
+            %h1.headline= talk.title
+            .byline
+              %address.author
+                By
+                = talk.speaker_name_and_title
+
+          - if talk.vacant?
+            %p Are you an industry professional with some advice to newcomers, an opinion about programming best practices, interesting stories based on your experience, or any other ideas that might be relevant to web design and development students? Find out how to contribute, get in touch today!
+          - else
+            = excerpt(talk)
+
+          - if admin?
+            .actions
+              = link_to 'Edit', edit_talk_path(talk), class: 'edit action'
+              = link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy action'
 
 
 
-- @talks.group_by(&:scheduled_for).each do |day, talks|
-  .talk-day
-    .date
-      = day.strftime("%b %e, %Y")
-      starting at 2:30pm
+  = link_to 'New Talk', new_talk_path if admin?
 
-    - talks.each do |talk|
-      .talk{ class: vacant_class?(talk) }
-        .speaker-avatar{ style: "background-image: url(#{ gravatar_img_url(talk.speaker_gravatar_hash) })"}
-
-        .details
-          %hgroup.title
-            %h1= talk.title
-            %h2= talk.speaker_name_and_title
-
-          .notes
-            - if talk.vacant?
-              Are you an industry professional with some advice to newcomers, an opinion about programming best practices, interesting stories based on your experience, or any other ideas that might be relevant to web design and development students? Find out how to contribute, get in touch today!
-            - else
-              = excerpt(talk)
-
-        - if admin?
-          .actions
-            = link_to 'Edit', edit_talk_path(talk), class: 'edit action'
-            = link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy action'
+%section#location
+  %h1 Location
+  .address
+    %h2 Nexen Theater
+    %p
+      Spartan/Petro-Canada Centre
+      %br
+      NAIT Main Campus
+      %br
+      Princess Elizabeth Avenue Northwest
+      %br
+      Edmonton, AB, Canada
+  #map
 
 
-
-= link_to 'New Talk', new_talk_path if admin?
