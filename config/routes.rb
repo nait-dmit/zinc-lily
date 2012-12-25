@@ -2,6 +2,7 @@ ZincLily::Application.routes.draw do
 
   scope "industry-series" do
     get "/" => "talks#index", as: "talks"
+    post "/" => "talks#create"
     resources :talks
   end
 
