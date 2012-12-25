@@ -1,37 +1,34 @@
-%p#notice= notice
-%p
-  %b Title
-  = @talk.title
+= link_to public_talks_path, class: 'button' do
+  %span.general.foundicon-left-arrow
+  View The Full Schedule, Info, &amp; Location
 
-%p
-  %b Speaker name:
-  = @talk.speaker_name
-%p
-  %b Speaker email:
-  = @talk.speaker_email
-%p
-  %b Speaker notes:
-  = @talk.notes
-%p
-  %b Speaker slides:
-  = @talk.slides_url
-%p
-  %b Speaker twitter:
-  = @talk.speaker_twitter
-%p
-  %b Speaker facebook:
-  = @talk.speaker_facebook
-%p
-  %b Speaker linkedin:
-  = @talk.speaker_linkedin
-%p
-  %b Speaker googleplus:
-  = @talk.speaker_googleplus
-%p
-  %b Scheduled for:
-  = @talk.scheduled_for
-%p
-  %b Confirmed:
-  = @talk.confirmed
+%article#talk
+  %h2
+    = @talk.scheduled_for.strftime("%b %d, %Y")
+    at 2:30pm,
+    Nexen Theater, NAIT
+  %header
+    %h1.headline= @talk.title
+    .byline
+      By
+      = @talk.speaker_name_and_title
+      = render :partial => "social-links", :locals => { :networks => @talk.speaker_networks }
 
-= link_to 'Back', public_talks_path
+
+
+
+
+
+
+  #notes
+    .speaker-avatar{ style: "background-image: url(#{ gravatar_img_url(@talk.speaker_gravatar_hash) })"}
+    = simple_format @talk.notes
+    = link_to "View Slides For This Talk", @talk.slides_url, class: 'button' unless @talk.slides_url.blank?
+
+  %aside#share
+    = link_to "http://eventbrite.com", class: "register button share" do
+      %span= image_tag "http://ebmedia.eventbrite.com/s3-build/perm_001/b955ae/django/images/icons/favicon.ico"
+      Register to Attend
+    = render partial: "share-links", locals: { url: talk_url(@talk), title: "DMIT Web Capstone | Industry Series: #{ @talk.title }", summary: @talk.notes, image: asset_url("promo-ad-sq-med.png") }
+
+

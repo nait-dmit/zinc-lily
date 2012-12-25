@@ -1,10 +1,11 @@
 %section#about
-  %h1 About
+  %h1 What is This?
   %p Every year the Digital Media & IT program at NAIT will graduate between 30 and 50 web design & development students. As part of their education, each student will participate in a course called Capstone Project, in which they are given the opportunity to work on projects to strengthen their portfolio and otherwise gain experience working in scenarios which are closer to those found in industry.
 
 %section#schedule
 
   %h1 Schedule
+  = link_to 'New Talk', new_talk_path, class: "button success" if admin?
 
   - @talks_per_day.each_with_index do |day, index|
     %section.day
@@ -20,23 +21,18 @@
           %header
             %h1.headline= talk.title
             .byline
-              %address.author
-                By
-                = talk.speaker_name_and_title
+              By
+              = talk.speaker_name_and_title
 
           - if talk.vacant?
             %p Are you an industry professional with some advice to newcomers, an opinion about programming best practices, interesting stories based on your experience, or any other ideas that might be relevant to web design and development students? Find out how to contribute, get in touch today!
           - else
-            = excerpt(talk)
+            %p= excerpt(talk)
 
           - if admin?
             .actions
-              = link_to 'Edit', edit_talk_path(talk), class: 'edit action'
-              = link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy action'
-
-
-
-  = link_to 'New Talk', new_talk_path if admin?
+              = link_to 'Edit', edit_talk_path(talk), class: 'edit action button success'
+              = link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy action button alert'
 
 %section#location
   %h1 Location
@@ -52,4 +48,12 @@
       Edmonton, AB, Canada
   #map
 
+%aside#share
+  = link_to "http://eventbrite.com", class: "register button share" do
+    %span= image_tag "http://ebmedia.eventbrite.com/s3-build/perm_001/b955ae/django/images/icons/favicon.ico"
+    Register to Attend
+  = render partial: "share-links", locals: { url: talks_url, title: "DMIT Web Capstone | Industry Series", summary: "Morbi nulla urna, fringilla non.", image: asset_url("promo-ad-sq-med.png") }
 
+
+- content_for :additional_scripts do
+  = javascript_include_tag "leaflet", "map"

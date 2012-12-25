@@ -1,0 +1,16 @@
+#map
+  display: none
+  height: 480px
+  border: 8px solid $dark-neutral
+
+  .leaflet-popup-content-wrapper
+    +prefix(border-radius, 0px)
+
+    h1
+      font-size: 2em
+
+    p
+      font-size: 1em
+
+  +responds-to("(min-width: 600px)")
+    display: block

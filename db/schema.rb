@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(:version => 20121221014955) do
     t.string   "speaker_facebook"
     t.string   "speaker_linkedin"
     t.string   "speaker_googleplus"
+    t.string   "speaker_github"
+    t.string   "speaker_website"
     t.date     "scheduled_for"
     t.boolean  "confirmed"
     t.datetime "created_at",         :null => false

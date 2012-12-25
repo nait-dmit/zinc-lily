@@ -6,40 +6,28 @@
     %meta(name="description" content="")
     %meta(name="viewport" content="width=device-width,initial-scale=1")
 
+    = favicon_link_tag "nait-favicon.png"
+
     %title Capstone Industry Series | Web Design &amp; Development | DMIT | NAIT
 
-    = stylesheet_link_tag :leaflet, :application, { media: nil }
+    = stylesheet_link_tag :leaflet, :talks
 
 
-  %body.talks
-
-    = render 'layouts/admin-nav'
-
-
+  %body
+    %nav
+      .container= render 'layouts/talks-nav'
     %header
       .container
-        %hgroup
-          %h2 DMIT Capstone | Web Design &amp; Development
-          %h1 Industry Series
-
-    %section#content
+        %h1
+          %span.sub DMIT Web Design &amp; Development Capstone
+          %span.main Industry Series
+        = link_to "Register To Attend!", "http://eventbrite.com", class: "register button"
+    #main
       .container
-
         -if notice
           #notice= raw(notice)
         = yield
-
-
-  :javascript
-    var _gauges = _gauges || [];
-    (function() {
-      var t   = document.createElement('script');
-      t.type  = 'text/javascript';
-      t.async = true;
-      t.id    = 'gauges-tracker';
-      t.setAttribute('data-site-id', '50b7839df5a1f527ba000003');
-      t.src = '//secure.gaug.es/track.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(t, s);
-    })();
-  = javascript_include_tag :application
+    %footer
+  = render 'layouts/analytics'
+  = javascript_include_tag :application, "jquery.sharrre.min"
+  = yield :additional_scripts

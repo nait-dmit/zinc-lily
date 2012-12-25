@@ -1,20 +1,132 @@
-= simple_form_for(@talk) do |f|
-  = f.error_notification
+= form_for(@talk) do |f|
 
   .form-inputs
-    = f.input :scheduled_for, as: :date
-    = f.input :confirmed
-    = f.input :title
-    = f.input :speaker_name
-    = f.input :speaker_email
-    = f.input :speaker_job_title
-    = f.input :speaker_company
-    = f.input :notes
-    = f.input :slides_url
-    = f.input :speaker_twitter, label: "Twitter"
-    = f.input :speaker_facebook, label: "Facebook"
-    = f.input :speaker_linkedin, label: "LinkedIn"
-    = f.input :speaker_googleplus, label: "Google+"
+    %fieldset
+      %legend Scheduling Info
+      .row
+        .two.mobile-one.columns
+          = f.label :scheduled_for, "Scheduled For", class: "right inline"
+        .ten.mobile-three.columns
+          = f.date_select :scheduled_for, class: 'four'
+
+      .row
+        .two.mobile-one.columns
+          = f.label :confirmed, class: "right"
+        .ten.mobile-three.columns
+          = f.check_box :confirmed
+
+    %fieldset
+      %legend Speaker Info
+      .row
+        .two.mobile-four.columns
+          = f.label :speaker_name, "Name", class: "right inline"
+        .ten.mobile-four.columns
+          = f.text_field :speaker_name, class: "four"
+
+      .row
+        .two.mobile-four.columns
+          = f.label :speaker_email, "Email", class: "right inline"
+        .ten.mobile-four.columns
+          = f.text_field :speaker_email, class: "six"
+
+      .row
+        .two.mobile-four.columns
+          = f.label :speaker_website, "Website", class: "right inline"
+        .ten.mobile-four.columns
+          .row.collapse
+            .one.mobile-one.columns
+              %span.prefix http://
+            .eleven.mobile-three.columns
+              = f.text_field :speaker_website, class: "six"
+
+      .row
+        .two.mobile-four.columns
+          = f.label :speaker_job_title, "Job Title", class: "right inline"
+        .ten.mobile-four.columns
+          = f.text_field :speaker_job_title, class: "six"
+
+      .row
+        .two.mobile-four.columns
+          = f.label :speaker_company, "Company", class: "right inline"
+        .ten.mobile-four.columns
+          = f.text_field :speaker_company, class: "four"
+
+    %fieldset
+      %legend Talk Info
+      .row
+        .two.mobile-four.columns
+          = f.label :title, class: "right inline"
+        .ten.mobile-four.columns
+          = f.text_field :title, class: "six"
+
+      .row
+        .two.mobile-four.columns
+          = f.label :notes, class: "right inline"
+        .ten.mobile-four.columns
+          = f.text_area :notes
+
+      .row
+        .two.mobile-four.columns
+          = f.label :slides_url, "Link To Slides", class: "right inline"
+        .ten.mobile-four.columns
+          = f.text_field :slides_url, class: "eight"
+
+    %fieldset
+      %legend Social Networks
+      .row
+        .two.mobile-four.columns
+          = f.label :speaker_twitter, class: "right inline" do
+            %span.social.foundicon-twitter
+        .ten.mobile-four.columns
+          .row.collapse
+            .one.mobile-one.columns
+              %span.prefix @
+            .eleven.mobile-three.columns
+              = f.text_field :speaker_twitter, class: "four"
+
+      .row
+        .two.mobile-four.columns
+          = f.label :speaker_facebook, class: "right inline" do
+            %span.social.foundicon-facebook
+        .ten.mobile-four.columns
+          .row.collapse
+            .three.mobile-four.columns
+              %span.prefix http://facebook.com/
+            .nine.mobile-four.columns
+              = f.text_field :speaker_facebook, class: "four"
+
+      .row
+        .two.mobile-four.columns
+          = f.label :speaker_linkedin, class: "right inline" do
+            %span.social.foundicon-linkedin
+        .ten.mobile-four.columns
+          .row.collapse
+            .three.mobile-four.columns
+              %span.prefix http://linkedin.com/in/
+            .nine.mobile-four.columns
+              = f.text_field :speaker_linkedin, class: "four"
+
+      .row
+        .two.mobile-four.columns
+          = f.label :speaker_googleplus, class: "right inline" do
+            %span.social.foundicon-googleplus
+        .ten.mobile-four.columns
+          .row.collapse
+            .three.mobile-four.columns
+              %span.prefix http://plus.google.com/
+            .nine.mobile-four.columns
+              = f.text_field :speaker_googleplus, class: "four"
+
+      .row
+        .two.mobile-four.columns
+          = f.label :speaker_github, class: "right inline" do
+            %span.social.foundicon-github
+        .ten.mobile-four.columns
+          .row.collapse
+            .three.mobile-four.columns
+              %span.prefix http://github.com/
+            .nine.mobile-four.columns
+              = f.text_field :speaker_github, class: "four"
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: 'success button'

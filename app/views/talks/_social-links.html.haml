@@ -1,0 +1,5 @@
+- networks.each do |network|
+  - if network[:name] == "website" || network[:name] == "mail"
+    = link_to "", social_network_url(network), class: "general foundicon-#{ network[:name] } button"
+  - else
+    = link_to "", social_network_url(network), class: "social foundicon-#{ network[:name] } button"

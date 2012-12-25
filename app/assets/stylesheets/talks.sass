@@ -1,0 +1,86 @@
+@import helpers, fonts
+
+
+// Colour Pallette
+// http://www.colourlovers.com/palette/379413/you_are_beautiful
+$amaranth: #CC2A41
+$tuileries: #E8CAA4
+$sailboats: #64908A
+$favoritejeans: #424254
+$royalty: #351330
+$black: #121212
+$white: #fff
+$silver: #f1f1f1
+$grey: #7F7F7F
+
+$highlight-color: $amaranth
+$dark-neutral: $black
+$medium-neutral: $grey
+$light-neutral: $silver
+$success-color: $sailboats
+$alert-color: $tuileries
+
+@import talks/foundation-settings, foundation, talks/foundation-overrides
+
+body
+  background: $dark-neutral
+
+.container
+  max-width: 1140px
+  margin: 0 auto
+  padding:
+    left: 10px
+    right: 10px
+
+  +responds-to("(min-width: 600px)")
+    padding:
+      left: 20px
+      right: 20px
+
+#main
+  padding: 3em 0
+  background: $white
+
+footer
+  min-height: 200px
+
+
+section
+  overflow: hidden
+  margin:
+    top: 2em
+    bottom: 3em
+
+  &> section
+    margin-top: 0px
+
+  &> h1
+    // display: inline-block
+    margin-top: 0
+    // padding: 0.5em 2.5em 0.5em 1em
+    font:
+      size: 1.5em
+      weight: normal
+    color: $highlight-color
+    // +text-3d
+    // background: $highlight-color
+
+    +responds-to("(min-width: 600px)")
+      padding-right: 5em
+
+.button.alert
+  color: $dark-neutral
+
+nav
+  ul
+    margin-bottom: 0
+
+  .button
+    background: transparent
+
+
+form select
+  width: auto
+
+
+@import talks/main-nav, talks/header, talks/schedule, talks/location, talks/social-links, talks/share-links

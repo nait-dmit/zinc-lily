@@ -34,4 +34,7 @@ ZincLily::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Add fonts directory to asset pipeline
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 end

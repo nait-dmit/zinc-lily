@@ -1,0 +1,70 @@
+body > header
+  overflow: hidden
+  min-height: 327px
+  padding: 2em 0
+  background:
+    color: $dark-neutral
+    image: url(dots.png), url(edmonton-skyline-8bit.png)
+    size: auto, 640px
+    position: center center, center top
+    repeat: repeat, repeat-x
+  border-bottom: 8px solid $dark-neutral
+
+  +responds-to("(min-width: 600px)")
+    min-height: 327px
+    background:
+      size: auto, 960px
+
+  +responds-to("(min-width: 960px)")
+    min-height: 490px
+    background:
+      size: auto, 1280px
+
+  +responds-to("(min-width: 1280px)")
+    min-height: 540px
+    background:
+      size: auto, 1600px
+
+  +responds-to("(min-width: 1600px)")
+    background:
+      size: auto, 2560px
+      position: center center, center center
+      // position: center center, 25% 150%
+
+  h1 span.main
+    +text-effect(8bit-3d)
+
+  h1
+    color: $white
+
+    .sub
+      display: block
+      font:
+        size: 0.5em
+        weight: normal
+
+  .register
+    padding: 1em
+    font:
+      family: "Gotham"
+      weight: normal
+      size: 1.5em
+    color: $white
+    background: $highlight-color, 10%
+    border: none
+    +prefix(box-shadow, none)
+
+#talk
+
+  &> header
+    margin-bottom: 2em
+    padding: 1em
+    color: $white
+    background: $dark-neutral
+
+    h1
+      margin: 0
+      color: inherit
+
+  &> h2
+    font-weight: normal

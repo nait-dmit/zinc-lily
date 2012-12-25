@@ -1,0 +1,50 @@
+#share
+  margin: 1em 0
+  text-align: center
+  border:
+    top: 4px solid #ccc
+    bottom: 4px solid #ccc
+
+a.share
+  display: inline-block
+  min-height: 19px
+  margin: 0.5em
+  padding: 4px 8px
+  font:
+    size: 0.8em
+  color: $dark-neutral
+  +linear-gradient(#FDFDFD, #D7D7D7)
+  border: 1px solid #C0C0C0
+    radius: 3px
+
+  [class*="foundicon-"]
+    line-height: 1.5
+
+    &[class*="facebook"]
+      color: #2D4485
+
+    &[class*="twitter"]
+      color: #259AE9
+
+    &[class*="googleplus"]
+      color: #C60022
+
+    &[class*="linkedin"]
+      color: #4A93BE
+
+    &[class*="mail"]
+      color: $dark-neutral
+
+  img
+    width: 14px
+    vertical-align: bottom
+
+  &.register
+    position: relative
+    // top: 1px
+    padding:
+      top: 6px
+      bottom: 7px
+
+  &:hover
+    color: $highlight-color

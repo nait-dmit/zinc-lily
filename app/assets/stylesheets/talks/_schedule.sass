@@ -1,0 +1,56 @@
+.day
+  padding: 1em
+  color: $white
+  background: $dark-neutral
+
+  h1
+    color: $white
+
+  hgroup
+    margin-bottom: 2em
+
+    &> h1
+      margin-bottom: 0
+
+
+.talk
+  overflow: hidden
+  margin-bottom: 1em
+  padding: 1em
+  background: $highlight-color
+
+  header
+    margin-bottom: 1em
+
+    h1
+      margin-bottom: 0
+      font:
+        size: 1.5em
+
+  a
+    padding: 0.25em 0.5em
+    color: $white
+    background: darken($highlight-color, 10%)
+
+  &.vacant, &.vacant h1
+    color: $medium-neutral
+    background: $light-neutral
+
+
+.speaker-avatar
+  float: left
+  width: 180px
+  height: 180px
+  margin-top: 1.2em
+  margin-right: 1em
+  +prefix(background-size, cover)
+  border:
+    radius: 200px
+    width: 8px
+    color: $white
+    style: solid
+
+.action, .talk .action
+  // padding: 0.5em
+  // color: $dark-neutral
+  // background: $white

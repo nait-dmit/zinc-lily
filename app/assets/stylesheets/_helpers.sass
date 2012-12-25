@@ -39,3 +39,9 @@
     src: url("#{ $file }.eot?#iefix") format("embedded-opentype"), url("#{ $file }.woff") format("woff"), url("#{ $file }.ttf") format("truetype"), url("#{ $file }.svg#svg#{ $family }") format("svg")
     font-weight: $weight
     font-style: $style
+
+=text-effect($style)
+  @if $style == 3d
+    text-shadow: 1px 1px 0px #000, 2px 2px 0px #000, 3px 3px 0px #000, 4px 4px 0px #000
+  @if $style == 8bit-3d
+    text-shadow: 2px 2px 0px #000, 4px 4px 0px #000, 6px 6px 0px #000
