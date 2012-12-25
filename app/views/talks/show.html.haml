@@ -26,7 +26,7 @@
     = link_to "View Slides For This Talk", @talk.slides_url, class: 'button' unless @talk.slides_url.blank?
 
   %aside#share
-    = link_to "http://eventbrite.com", class: "register button share" do
+    = link_to "http://industryseries.eventbrite.com/", class: "register button share" do
       %span= image_tag "http://ebmedia.eventbrite.com/s3-build/perm_001/b955ae/django/images/icons/favicon.ico"
       Register to Attend
     = render partial: "share-links", locals: { url: talk_url(@talk), title: "DMIT Web Capstone | Industry Series: #{ @talk.title }", summary: @talk.notes, image: asset_url("promo-ad-sq-med.png") }
