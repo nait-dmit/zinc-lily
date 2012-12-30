@@ -8,6 +8,6 @@ This is a great chance for industry to meet DMIT students getting ready to gradu
 
 ### Format
 
-Each day of the series will feature two or three talks of various topics. Each talk will range from 30 minutes to 1 hour in length followed by a brief Q&A period. After each day of the event, we'll gather at the newly renovated [Nest Taphouse Grill](http://www.nesttaphousegrill.com/) here on NAIT's main campus for some food, drink, and conversation. It will be a great chance to chat with some emerging graduates and to field a few more questions from them.
+Each day of the series will feature two or three talks on various topics. Each talk will range from 30 minutes to 1 hour in length followed by a brief Q&A period. After each day of the event, we'll gather at the newly renovated [Nest Taphouse Grill](http://www.nesttaphousegrill.com/) here on NAIT's main campus for some food, drink, and conversation. It will be a great chance to chat with some emerging graduates and to field a few more questions from them.
 
 Tickets are free, but seating for the talks is limited so please [grab your tickets soon](http://industryseries.eventbrite.com/) to join in. Tickets are not required to join us for socializing at the Nest afterwards, so feel free to join us there at around 4:30 pm each day, even if you can't make it to the talks.
