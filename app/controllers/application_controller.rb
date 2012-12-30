@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
     "proposals#show",
     "proposals#edit",
     "proposals#update",
-    "proposals#destroy"
+    "proposals#destroy",
+
+    "talks#new",
+    "talks#edit",
+    "talks#update",
+    "talks#destroy"
   ]
 end
