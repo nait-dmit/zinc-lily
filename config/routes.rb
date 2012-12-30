@@ -1,6 +1,6 @@
 ZincLily::Application.routes.draw do
 
-  scope "industry-series" do
+  scope :constraints => { :subdomain => "industryseries" } do
     get "/" => "talks#index", as: "talks"
     post "/" => "talks#create"
     resources :talks
