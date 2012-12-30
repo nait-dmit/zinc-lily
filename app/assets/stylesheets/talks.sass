@@ -55,7 +55,7 @@ section
     margin-top: 0px
 
   &> h1
-    // display: inline-block
+    display: none
     margin-top: 0
     // padding: 0.5em 2.5em 0.5em 1em
     font:
@@ -87,6 +87,10 @@ form select
 
   .speaker-avatar
     border-color: $dark-neutral
+
+.text-columns
+  +prefix(column-count, 3)
+  +prefix(column-gap, 20px)
 
 
 @import talks/main-nav, talks/header, talks/schedule, talks/location, talks/social-links, talks/share-links

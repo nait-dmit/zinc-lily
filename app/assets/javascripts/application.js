@@ -15,22 +15,5 @@
 //= require foundation
 //= require leaflet
 //= require map
-
-
-
-function popupWindow(url, title, w, h) {
-  var left = (screen.width/2)-(w/2);
-  var top = (screen.height/4)-(h/2);
-  return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
-  if (window.focus) NWin.focus();
-}
-
-
-$('.popup').on('click', function(){
-  var url = $(this).attr('href');
-  popupWindow(url, "Share This Page", 600, 300)
-
-  return false;
-})
-
+//= require popups
 

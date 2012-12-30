@@ -90,4 +90,21 @@ module TalksHelper
     return link_to raw("<span class='#{ icon_class } foundicon-#{ network.to_s }'></span> Share"), endpoint, class: "#{ network.to_s } share #{ popup_class }"
   end
 
+  def talk_proposal_email_body(talk)
+    br = "\n"
+    body = [
+      "I'm interested in doing a talk on",
+      talk.scheduled_for.strftime('%b %d'),
+      br,br,br,br,
+      "Description:",
+      br,br,br,
+      "Approximate Lenght:",
+      br,br,br,
+      "Link to Slides (if applicable):",
+      br,
+    ].join(" ")
+
+    return URI.escape(body)
+  end
+
 end

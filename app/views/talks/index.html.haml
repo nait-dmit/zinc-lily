@@ -1,6 +1,6 @@
 %section#about
   %h1 What is This?
-  %p Every year the Digital Media & IT program at NAIT will graduate between 30 and 50 web design & development students. As part of their education, each student will participate in a course called Capstone Project, in which they are given the opportunity to work on projects to strengthen their portfolio and otherwise gain experience working in scenarios which are closer to those found in industry.
+  = render partial: "about-content"
 
 %section#schedule
 
@@ -25,7 +25,7 @@
               = talk.speaker_name_and_title
 
           - if talk.vacant?
-            %p Are you an industry professional with some advice to newcomers, an opinion about programming best practices, interesting stories based on your experience, or any other ideas that might be relevant to web design and development students? Find out how to contribute, get in touch today!
+            = render partial: 'vacant-talk-content', locals: { talk: talk }
           - else
             %p= excerpt(talk)
 
@@ -46,11 +46,12 @@
       Princess Elizabeth Avenue Northwest
       %br
       Edmonton, AB, Canada
+    %p= link_to "View in Google Maps", "http://goo.gl/maps/UK4vt"
   #map
 
 %aside#share
   = link_to "http://industryseries.eventbrite.com/", class: "register button share" do
     %span= image_tag "http://ebmedia.eventbrite.com/s3-build/perm_001/b955ae/django/images/icons/favicon.ico"
-    Register to Attend
+    Get Free Tickets!
   = render partial: "share-links", locals: { url: talks_url, title: "DMIT Web Capstone | Industry Series", summary: "Morbi nulla urna, fringilla non.", image: asset_url("promo-ad-sq-med.png") }
 

@@ -8,7 +8,7 @@
 
     = favicon_link_tag "nait-favicon.png"
 
-    %title Capstone Industry Series | Web Design &amp; Development | DMIT | NAIT
+    %title Industry Series | Web Design &amp; Development | DMIT | NAIT
 
     = stylesheet_link_tag :leaflet, :talks
 
@@ -19,14 +19,15 @@
     %header
       .container
         %h1
-          %span.sub DMIT Web Design &amp; Development Capstone
-          %span.main Industry Series
-        = link_to "Register To Attend!", "http://industryseries.eventbrite.com/", class: "register button"
+          %span.sub DMIT Web Design &amp; Development
+          %span.main Industry Series 2013
+        = link_to "Free To Attend, Get Your Tickets Now!", "http://industryseries.eventbrite.com/", class: "register button"
     #main
       .container
         -if notice
           #notice= raw(notice)
         = yield
     %footer
+      %p
   = render 'layouts/analytics'
   = javascript_include_tag :application

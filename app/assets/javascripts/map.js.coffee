@@ -1,9 +1,9 @@
 mapOptions =
   apikey: "0b1a6062d8c54126a8a5d74bb8f6d503"
   lng: -113.49990
-  lat: 53.56908
+  lat: 53.57908
   style: "32201"
-  zoom: 15
+  zoom: 13
   markers:
     nexenTheater:
       lng: -113.49990
@@ -14,6 +14,9 @@ mapOptions =
     parking2:
       lng: -113.50082
       lat: 53.56781
+    theNest:
+      lng: -113.50561
+      lat: 53.56656
   polygons:
     parking1: [
         [53.56899, -113.50165],
@@ -39,7 +42,7 @@ tiles = L.tileLayer "http://{s}.tile.cloudmade.com/#{ mapOptions.apikey }/#{ map
 
 nexenTheater = L.marker [mapOptions.markers.nexenTheater.lat, mapOptions.markers.nexenTheater.lng]
 nexenTheater.bindPopup "<h1>Nexen Theater</h1><p>Spartan/Petro-Canada Centre<br/>NAIT Main Campus<br/>Princess Elizabeth Ave<br/>Edmonton, AB, Canada<br/></p><p><a target='_blank' href='http://goo.gl/maps/UK4vt'>View in Google Maps</a></p>"
-nexenTheater.openPopup()
+
 
 parking1Marker = L.marker [mapOptions.markers.parking1.lat, mapOptions.markers.parking1.lng],
   icon:
@@ -48,9 +51,8 @@ parking1Marker = L.marker [mapOptions.markers.parking1.lat, mapOptions.markers.p
       iconAnchor: [6, 20],
       shadowSize: [20, 20],
       shadowAnchor: [6, 20]
-
 parking1Marker.bindPopup "<h1>Parking: U-Lot</h1>"
-parking1Marker.openPopup()
+
 
 parking2Marker = L.marker [mapOptions.markers.parking2.lat, mapOptions.markers.parking2.lng],
   icon:
@@ -59,18 +61,27 @@ parking2Marker = L.marker [mapOptions.markers.parking2.lat, mapOptions.markers.p
       iconAnchor: [6, 20],
       shadowSize: [20, 20],
       shadowAnchor: [6, 20]
-
 parking2Marker.bindPopup "<h1>Parking: Hourly Lot</h1>"
-parking2Marker.openPopup()
 
 
 parking1 =  L.polygon mapOptions.polygons.parking1,
   color: '#26C5CE'
   weight: 2
 
+
 parking2 =  L.polygon mapOptions.polygons.parking2,
   color: '#26C5CE'
   weight: 2
+
+
+theNest = L.marker [mapOptions.markers.theNest.lat, mapOptions.markers.theNest.lng],
+  icon:
+    new L.Icon.Default
+      iconSize: [18, 30],
+      iconAnchor: [9, 30],
+      shadowSize: [30, 30],
+      shadowAnchor: [9, 30]
+theNest.bindPopup "<h1>The Nest Taphouse Grill</h1><p>NAIT Main Campus <br/>Princess Elizabeth Ave <br/>Edmonton, AB, Canada</p><p><a target='_blank' href='http://www.nesttaphousegrill.com/'>www.nesttaphousegrill.com</a></p>"
 
 
 tiles.addTo map
@@ -79,3 +90,5 @@ parking1Marker.addTo map
 parking2Marker.addTo map
 parking1.addTo map
 parking2.addTo map
+theNest.addTo map
+nexenTheater.openPopup()
