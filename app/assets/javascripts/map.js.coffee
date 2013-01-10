@@ -9,11 +9,8 @@ mapOptions =
       lng: -113.49990
       lat: 53.56823
     parking1:
-      lng: -113.50072
-      lat: 53.56907
-    parking2:
-      lng: -113.50082
-      lat: 53.56781
+      lng: -113.50168
+      lat: 53.56969
     theNest:
       lng: -113.50561
       lat: 53.56656
@@ -51,25 +48,10 @@ parking1Marker = L.marker [mapOptions.markers.parking1.lat, mapOptions.markers.p
       iconAnchor: [6, 20],
       shadowSize: [20, 20],
       shadowAnchor: [6, 20]
-parking1Marker.bindPopup "<h1>Parking: U-Lot</h1>"
-
-
-parking2Marker = L.marker [mapOptions.markers.parking2.lat, mapOptions.markers.parking2.lng],
-  icon:
-    new L.Icon.Default
-      iconSize: [12, 20],
-      iconAnchor: [6, 20],
-      shadowSize: [20, 20],
-      shadowAnchor: [6, 20]
-parking2Marker.bindPopup "<h1>Parking: Hourly Lot</h1>"
+parking1Marker.bindPopup "<h1>Parking: K-Lot</h1><p>Guest parking passes available!</p>"
 
 
 parking1 =  L.polygon mapOptions.polygons.parking1,
-  color: '#26C5CE'
-  weight: 2
-
-
-parking2 =  L.polygon mapOptions.polygons.parking2,
   color: '#26C5CE'
   weight: 2
 
@@ -87,8 +69,6 @@ theNest.bindPopup "<h1>The Nest Taphouse Grill</h1><p>NAIT Main Campus <br/>Prin
 tiles.addTo map
 nexenTheater.addTo map
 parking1Marker.addTo map
-parking2Marker.addTo map
 parking1.addTo map
-parking2.addTo map
 theNest.addTo map
 nexenTheater.openPopup()
