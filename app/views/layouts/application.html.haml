@@ -11,7 +11,7 @@
     = stylesheet_link_tag :application, { media: nil }
     = javascript_include_tag :application
 
-  %body
+  %body{ class: controller_name }
     %nav.screen-only
       - if admin?
         = link_to "Home", root_path
